@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.*;
 import java.time.YearMonth;
 import java.util.*;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {
+        "http://localhost:3000",
+        "https://asset-tracker-frontend.vercel.app/"
+})
 @RestController
 @RequestMapping("/api/asset")
 public class AssetController {
