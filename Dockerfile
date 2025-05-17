@@ -7,6 +7,9 @@ WORKDIR /app
 # プロジェクト全体をコピー
 COPY . .
 
+# Gradle ビルドを実行（テストはスキップ）
+RUN ./gradlew build -x test
+
 # gradlew に実行権限を付与（ここ重要！！）
 RUN chmod +x ./gradlew
 
