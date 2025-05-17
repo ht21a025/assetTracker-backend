@@ -1,0 +1,39 @@
+# Spring Boot
+.gradle
+build/
+logs/
+*.log
+spring.log
+
+# Gradle Wrapper
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDEs
+.idea
+.classpath
+.project
+.settings
+.vscode/
+*.iml
+*.ipr
+*.iws
+out/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temp files
+*.swp
+*.bak
+*.tmp
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# Env files
+.env
