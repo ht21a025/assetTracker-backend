@@ -7,14 +7,11 @@ WORKDIR /app
 # プロジェクト全体をコピー
 COPY . .
 
-# Gradle ビルドを実行（テストはスキップ）
-RUN ./gradlew build -x test
-
-# gradlew に実行権限を付与（ここ重要！！）
+# gradlew に実行権限を付与
 RUN chmod +x ./gradlew
 
-# Gradle ビルドを実行
-RUN ./gradlew build
+# ✅ Gradle ビルド（テストをスキップ）
+RUN ./gradlew build -x test
 
 # Spring Boot アプリの起動
 CMD ["java", "-jar", "build/libs/assettracker-0.0.1-SNAPSHOT.jar"]
