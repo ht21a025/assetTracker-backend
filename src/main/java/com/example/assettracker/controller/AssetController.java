@@ -20,7 +20,6 @@ public class AssetController {
     private final AssetRecordRepository repository;
     private final AppUserRepository userRepository;
 
-    // ユーザーごとの初期資産を一時的に保持（今回は簡易な構成）
     private final Map<Long, Integer> initialAssets = new HashMap<>();
 
     public AssetController(AssetRecordRepository repository, AppUserRepository userRepository) {
@@ -28,13 +27,11 @@ public class AssetController {
         this.userRepository = userRepository;
     }
 
-    // ✅ 初期資産を設定（ユーザーごと）
     @PostMapping("/initial")
     public void setInitialAsset(@RequestParam int amount, @RequestParam Long userId) {
         initialAssets.put(userId, amount);
     }
 
-    // ✅ 月ごとの収支データを保存（userId含む）
     @PostMapping("/record")
     public AssetRecord addOrUpdateRecord(@RequestBody Map<String, Object> payload) {
         Long userId = Long.valueOf(payload.get("userId").toString());

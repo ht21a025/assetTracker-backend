@@ -16,8 +16,8 @@ public class AssetRecord {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private int income;    // 収入（給与など）
-    private int expense;   // 支出（生活費など）
+    private int income;
+    private int expense;
 
     @Column(unique = true)
     private YearMonth month;

@@ -12,10 +12,10 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http
-                .cors(Customizer.withDefaults()) // CORSを有効化
-                .csrf(csrf -> csrf.disable()) // CSRFを無効化（API用途なので）
+                .cors(Customizer.withDefaults())
+                .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/**").permitAll() // 全エンドポイント許可（開発用）
+                        .requestMatchers("/**").permitAll()
                         .anyRequest().permitAll());
 
         return http.build();
