@@ -9,7 +9,10 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Map;
 
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = {
+        "http://localhost:3000",
+        "https://asset-tracker-frontend.vercel.app"
+})
 @RestController
 @RequestMapping("/api/user")
 public class UserController {
