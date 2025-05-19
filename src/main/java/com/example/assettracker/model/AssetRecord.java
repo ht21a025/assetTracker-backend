@@ -6,6 +6,7 @@ import lombok.*;
 import java.time.YearMonth;
 
 @Entity
+@Table(uniqueConstraints = @UniqueConstraint(columnNames = { "user_id", "month" }))
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -19,10 +20,10 @@ public class AssetRecord {
     private int income;
     private int expense;
 
-    @Column(unique = true)
+    @Column(nullable = false)
     private YearMonth month;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", nullable = false)
     private AppUser user;
 }

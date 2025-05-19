@@ -27,7 +27,7 @@ public class UserController {
 
     @PostMapping("/register")
     public AppUser register(@RequestBody AppUser user) {
-        user.setPassword(passwordEncoder.encode(user.getPassword())); // ハッシュ化
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
         return userRepository.save(user);
     }
 
